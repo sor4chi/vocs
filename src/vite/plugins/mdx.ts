@@ -1,7 +1,6 @@
 import mdxPlugin from '@mdx-js/rollup'
 import { h } from 'hastscript'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
-import rehypeShikiji, { type RehypeShikijiOptions } from 'rehype-shikiji'
 import rehypeSlug from 'rehype-slug'
 import remarkDirective from 'remark-directive'
 import remarkFrontmatter from 'remark-frontmatter'
@@ -22,7 +21,9 @@ import { type PluginOption } from 'vite'
 
 import type { ParsedConfig } from '../../config.js'
 import { resolveVocsConfig } from '../utils/resolveVocsConfig.js'
+import { rehypeShikijiDisplayNotation } from './rehype/display-shikiji-notation.js'
 import { rehypeInlineShikiji } from './rehype/inline-shikiji.js'
+import rehypeShikiji, { type RehypeShikijiOptions } from './rehype/shikiji.js'
 import { remarkAuthors } from './remark/authors.js'
 import { remarkBlogPosts } from './remark/blog-posts.js'
 import { remarkCallout } from './remark/callout.js'
@@ -44,7 +45,6 @@ import { transformerTagLine } from './shikiji/transformerTagLine.js'
 import { transformerTitle } from './shikiji/transformerTitle.js'
 import { twoslashRenderer } from './shikiji/twoslashRenderer.js'
 import { twoslasher } from './shikiji/twoslasher.js'
-import { rehypeShikijiDisplayNotation } from './rehype/display-shikiji-notation.js'
 
 const defaultTwoslashOptions = defaultTwoslashOptions_()
 
